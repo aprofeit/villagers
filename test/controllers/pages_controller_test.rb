@@ -17,7 +17,7 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
     assert_response 200
   end
 
-  test 'getting root without signing in' do
+  test 'getting root without signing in should redirect you to sign in screen' do
     sign_out users(:batcat)
 
     get '/'
