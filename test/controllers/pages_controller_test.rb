@@ -16,4 +16,11 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
     get '/'
     assert_response 200
   end
+
+  test 'getting root without signing in' do
+    sign_out users(:batcat)
+
+    get '/'
+    assert_redirected_to "http://www.example.com/users/sign_in"
+  end
 end
