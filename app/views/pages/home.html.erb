@@ -1,1 +1,10 @@
-pong
+<h1>Villagers</h1>
+<% Citizen.find_each do |c| %>
+  <div>
+    <strong>Name</strong> <%= c.name %>
+    <br />
+    <strong>Hunger</strong> <%= c.hunger %>
+    <br />
+    <strong>Thirst</strong> <%= c.thirst %>
+  </div>
+<% end %>
