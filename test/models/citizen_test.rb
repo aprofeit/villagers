@@ -1,6 +1,14 @@
 require "test_helper"
 
 class CitizenTest < ActiveSupport::TestCase
+  def setup
+    Timecop.freeze(Date.today)
+  end
+
+  def teardown
+    Timecop.return
+  end
+
   test "creating a valid citizen" do
     citizen = nil
     assert_difference 'Citizen.count' do
@@ -20,9 +28,17 @@ class CitizenTest < ActiveSupport::TestCase
 
     assert_nil citizen.last_tick_at
 
-    Timecop.freeze(Date.today) do
+    citizen.tick
+    assert_equal Time.zone.now, citizen.last_tick_at
+  end
+
+  test 'ticking updates the hunger by the expected amount after 2 hours' do
+    citizen = valid_citizen
+    citizen.tick
+
+    Timecop.travel(2.hours.from_now) do
       citizen.tick
-      assert_equal Time.zone.now, citizen.last_tick_at
+      assert_in_delta 2, citizen.hunger, 0.001
     end
   end
 

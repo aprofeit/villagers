@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_09_064126) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_09_070720) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "citizens", force: :cascade do |t|
     t.string "name", null: false
     t.integer "age", default: 0, null: false
-    t.integer "hunger", default: 0, null: false
-    t.integer "thirst", default: 0, null: false
+    t.decimal "hunger", default: "0.0", null: false
+    t.decimal "thirst", default: "0.0", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "hunger_per_hour", default: 1, null: false
