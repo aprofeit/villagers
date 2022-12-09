@@ -83,3 +83,7 @@ gem "omniauth-apple", "~> 1.2"
 gem "faker", "~> 3.0"
 
 gem "sidekiq", "~> 6.0"
+
+gem "sidekiq-scheduler", "~> 4.0"
+
+gem "timecop", "~> 0.9.6"

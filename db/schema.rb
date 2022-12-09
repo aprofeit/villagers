@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_09_060046) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_09_064126) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -23,6 +23,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_09_060046) do
     t.datetime "updated_at", null: false
     t.integer "hunger_per_hour", default: 1, null: false
     t.integer "thirst_per_hour", default: 2, null: false
+    t.datetime "last_tick_at"
   end
 
   create_table "users", force: :cascade do |t|

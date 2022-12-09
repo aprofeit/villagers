@@ -1,0 +1,4 @@
+:schedule:
+  tick:
+    class: 'TickJob'
+    every: '5s'
