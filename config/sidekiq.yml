@@ -1,4 +1,4 @@
 :schedule:
   tick:
     class: 'TickJob'
-    every: '5s'
+    every: '1s'
