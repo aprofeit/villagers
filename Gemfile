@@ -82,4 +82,4 @@ gem "omniauth-apple", "~> 1.2"
 
 gem "faker", "~> 3.0"
 
-gem "sidekiq", "~> 7.0"
+gem "sidekiq", "~> 6.0"
