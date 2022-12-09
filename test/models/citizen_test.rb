@@ -18,6 +18,8 @@ class CitizenTest < ActiveSupport::TestCase
   test 'ticking updates last_tick_at' do
     citizen = valid_citizen
 
+    assert_nil citizen.last_tick_at
+
     Timecop.freeze(Date.today) do
       citizen.tick
       assert_equal Time.zone.now, citizen.last_tick_at
