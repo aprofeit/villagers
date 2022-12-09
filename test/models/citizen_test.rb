@@ -11,6 +11,8 @@ class CitizenTest < ActiveSupport::TestCase
     assert_equal 0, citizen.age
     assert_equal 0, citizen.hunger
     assert_equal 0, citizen.thirst
+    assert_equal 1, citizen.hunger_per_hour
+    assert_equal 2, citizen.thirst_per_hour
   end
 
   private
