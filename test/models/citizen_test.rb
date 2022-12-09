@@ -38,7 +38,17 @@ class CitizenTest < ActiveSupport::TestCase
 
     Timecop.travel(2.hours.from_now) do
       citizen.tick
-      assert_in_delta 2, citizen.hunger, 0.001
+      assert_in_delta 2, citizen.hunger, 0.000001
+    end
+  end
+
+  test 'ticking updates the thirst by the expected amount after 3 hours' do
+    citizen = valid_citizen
+    citizen.tick
+
+    Timecop.travel(3.hours.from_now) do
+      citizen.tick
+      assert_in_delta 6, citizen.thirst, 0.000001
     end
   end
 
