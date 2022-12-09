@@ -3,8 +3,8 @@
   <div>
     <strong>Name</strong> <%= c.name %>
     <br />
-    <strong>Hunger</strong> <%= c.hunger %>
+    <strong>Hunger</strong> <%= c.hunger.round(2) %>
     <br />
-    <strong>Thirst</strong> <%= c.thirst %>
+    <strong>Thirst</strong> <%= c.thirst.round(2) %>
   </div>
 <% end %>
