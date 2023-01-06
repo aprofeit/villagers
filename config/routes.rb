@@ -5,4 +5,5 @@ Rails.application.routes.draw do
 
   root "pages#home"
   get '/ping' => 'pings#show'
+  get '/rev' => 'pings#sha'
 end

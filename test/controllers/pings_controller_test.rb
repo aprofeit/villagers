@@ -6,4 +6,11 @@ class PingsControllerTest < ActionDispatch::IntegrationTest
 
     assert_response 200
   end
+
+  test 'should get rev' do
+    get '/rev'
+
+    assert_response 200
+    assert_equal `git rev-parse --short HEAD`.chomp, @response.body.to_s.chomp
+  end
 end
